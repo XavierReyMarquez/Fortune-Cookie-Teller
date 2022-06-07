@@ -2,11 +2,11 @@
   <div class="container px-6 py-12 h-full w-1/2 bg-indigo-300">
     <div class="flex justify-center items-center flex-wrap h-full g-6 text-gray-800">
       <div class="md:w-8/12 lg:w-6/12 mb-12 md:mb-0">
-        <img
+        {{!-- <img
           src="[image]"
           class="w-full"
           alt="Tarot icon"
-        />
+        /> --}}
       </div>
 
 {{#if isLoggedOut}}
@@ -47,7 +47,7 @@
           <input class="form-input" type="password" id="password-signup" />
         </div>
         <div class="form-group">
-          <button class="btn btn-primary" type="submit">signup</button>
+          <button id="signup-btn" class="btn btn-primary" type="submit">signup</button>
         </div>
       </form>
     </div>
