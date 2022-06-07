@@ -13,10 +13,8 @@ router.get('/', async (req, res) => {
         },
       ],
     });
-
     // Serialize data so the template can read it
     const cards = cardData.map((card) => card.get({ plain: true }));
-
     // Pass serialized data and session flag into template
     res.render('homepage', {
       cards,
@@ -24,6 +22,7 @@ router.get('/', async (req, res) => {
     });
   } catch (err) {
     res.status(500).json(err);
+    // console.log(cardData);
   }
 });
 
