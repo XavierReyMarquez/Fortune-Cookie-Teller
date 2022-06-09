@@ -18,6 +18,14 @@ router.get('/', async (req, res) => {
   }
 });
 
+router.get('/one-card-spread', async (req, res) => {
+  res.render('one-card-spread');
+});
+
+router.get('/three-spread', async (req, res) => {
+  res.render('three-spread');
+});
+
 router.get('/card/:id', async (req, res) => {
   try {
     const cardData = await Card.findByPk(req.params.id, {
