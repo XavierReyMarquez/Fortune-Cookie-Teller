@@ -1,0 +1,30 @@
+<section class="overflow-hidden text-gray-700 w-auto">
+    <div class="container px-6 py-3 mx-auto mt-5 lg:pt-12 lg:px-32">
+        <div class="flex flex-wrap -m-1 md:-m-2">
+            <div class="flex flex-wrap mx-auto w-1/2">
+                <div class="w-30 h-80 p-1 md:p-2">
+                    <img alt="tarot card" class="block object-cover object-center w-full h-full rounded-lg shadow-md animate__flipOutY"
+                    src="https://cdna.artstation.com/p/assets/images/images/019/375/364/large/clarissa-choi-back.jpg?1563213352">
+                </div>
+                <div class="w-1/2 h-80 m-2 p-1 md:p-2 bg-gray-300 rounded">
+                    <h5>{{name}}</h5>
+                    <p>{{meanings}}<br>
+                    {{questiontoask}}<br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container flex bg-gray-200">
+        <div class="container w-auto mb-3 p-3 xl:w-96 bg-yellow-200">
+            <label for="journalInput" class="form-label inline-block mb-2 text-gray-700">What are your thoughts?</label>
+                <textarea
+                    type="text"
+                    class="form-control block w-full px-3 py-1.5 mx-3 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                    id="journalInput"
+                    placeholder="This spread is trying to tell me..."/></textarea>
+        <button type="button"
+            class="inline-block px-6 py-2.5 my-2 mx-3 border-2 border-white text-white font-medium text-xs leading-tight uppercase rounded bg-gray-600 hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+            data-mdb-ripple="true" data-mdb-ripple-color="light">Save</button>
+        </div>
+    </div>
+</section>

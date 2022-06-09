@@ -2,7 +2,7 @@ const sequelize = require('../config/connection');
 const { User, Card } = require('../models');
 
 const userData = require('./userData.json');
-const cardData = require('./cardData.json');
+const cardData = require('./tarot-images.json');
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
