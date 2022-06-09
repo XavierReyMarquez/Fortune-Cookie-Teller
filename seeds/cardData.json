@@ -1,7 +1,12 @@
 [
   {
-    "name": "The Fool",
-    "desc": "Xavier"
+    "type": "major",
+    "name_short": "ar01",
+    "name": "The Magician",
+    "value": "1",
+    "value_int": 1,
+    "meaning_up": "Skill, diplomacy, address, subtlety; sickness, pain, loss, disaster, snares of enemies; self-confidence, will; the Querent, if male.",
+    "meaning_rev": "Physician, Magus, mental disease, disgrace, disquiet."
   },
   {
     "name": "The Magician",
