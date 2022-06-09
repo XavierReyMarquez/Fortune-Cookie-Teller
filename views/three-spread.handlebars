@@ -4,44 +4,42 @@
       <div class="flex flex-wrap w-1/3">
         <div class="w-30 h-80 p-1 md:p-2">
             {{!-- Need to create function for onclick, add animate class --}}
-          <img alt="tarot card" class="block object-cover object-center w-full h-full rounded-lg shadow-md animate__flipInY"
+          <img alt="tarot card" class="block object-cover object-center w-full h-full rounded-lg shadow-md animate__flipOutY"
             src="https://cdna.artstation.com/p/assets/images/images/019/375/364/large/clarissa-choi-back.jpg?1563213352">
         </div>
         {{!-- This div will be the "overlay" when hovering for meaning, could make this a handlebar? --}}
         <div class="w-1/2 h-80 m-2 p-1 md:p-2 bg-gray-300 rounded">
-          <h5>{{card.Name}}</h5>
-          <p>{{meaning_up}}<br>
-          {{meaning_rev}}</p>
+          <h5>{{name}}</h5>
+          <p>{{meanings}}<br>
+          {{fortune_telling}}<br>
+          {{'Questions to Ask'}}</p>
         </div>
       </div>
       <div class="flex flex-wrap w-1/3">
         <div class="w-30 h-80 p-1 md:p-2">
-          <img alt="tarot card" class="block object-cover object-center w-full h-full rounded-lg shadow-md animate__flipInY"
+          <img alt="tarot card" class="block object-cover object-center w-full h-full rounded-lg shadow-md animate__flipOutY"
             src="https://cdna.artstation.com/p/assets/images/images/019/375/364/large/clarissa-choi-back.jpg?1563213352">
         </div>
         {{!-- Card meaning --}}
         <div class="w-1/2 h-80 m-2 p-1 md:p-2 bg-gray-300 rounded">
-          <h5>{{card.Name}}</h5>
-          <p>{{meaning_up}}<br>
-          {{meaning_rev}}</p>
+          <h5>{{name}}</h5>
+          <p>{{meanings}}<br>
+          {{fortune_telling}}<br>
+          {{'Questions to Ask'}}</p>
         </div>
       </div>
       <div class="flex flex-wrap w-1/3">
         <div class="w-30 h-80 p-1 md:p-2">
-          <img alt="tarot card" class="block object-cover object-center w-full h-full rounded-lg shadow-md animate__flipInY"
+          <img alt="tarot card" class="block object-cover object-center w-full h-full rounded-lg shadow-md animate__flipOutY"
             src="https://cdna.artstation.com/p/assets/images/images/019/375/364/large/clarissa-choi-back.jpg?1563213352">
         </div>
-        {{!-- Card meaning --}}
-        <div class="w-1/2 h-80 m-2 p-1 md:p-2 bg-gray-300 rounded">
-          <h5>{{card.Name}}</h5>
-          <p>{{meaning_up}}<br>
-          {{meaning_rev}}</p>
-        </div>
+        {{!-- Card meaning + test the handlebars html--}}
+        {{{Card}}}
       </div>
     </div>
   </div>
-  <div class="flex justify-center">
-  <div class="mb-3 xl:w-96 bg-yellow-200">
+  <div class="container flex bg-gray-200">
+  <div class="container w-auto mb-3 p-3 xl:w-96 bg-yellow-200">
     <label for="journalInput" class="form-label inline-block mb-2 text-gray-700">What are your thoughts?</label>
     <input
       type="text"
