@@ -40,16 +40,18 @@ The website allows users to pull a tarot spread (1 or 3 cards). If the user has 
 
 ---
 
-API:
-Ekelen/Tarot-api
-Kaggle
-Tarot API
-CSS FRAMEWORK:
-TailWind
-NEW TECHNOLOGY:
-Animate.css
+-API:
+--Ekelen/Tarot-api
+--Kaggle
+--Tarot API
+-CSS FRAMEWORK:
+--TailWind
+-NEW TECHNOLOGY:
+--Animate.css
 
 ### Wireframing
+
+https://www.figma.com/file/OBrZWypslEx6AgtTq6sIXg/Fortune-Teller-Wiremapping?node-id=0%3A1
 
 ### Kanban board
 
