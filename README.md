@@ -36,9 +36,18 @@ The website allows users to pull a tarot spread (1 or 3 cards). If the user has 
 
 ---
 
-## Process
+## Technologies Used
 
 ---
+
+API:
+Ekelen/Tarot-api
+Kaggle
+Tarot API
+CSS FRAMEWORK:
+TailWind
+NEW TECHNOLOGY:
+Animate.css
 
 ### Wireframing
 
