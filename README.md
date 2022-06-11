@@ -1,4 +1,4 @@
-# fortune_cookie-cards
+# fortune-Cookie-Cards
 
 ## Table of Contents
 
@@ -56,6 +56,8 @@ https://www.figma.com/file/OBrZWypslEx6AgtTq6sIXg/Fortune-Teller-Wiremapping?nod
 ### Kanban board
 
 ### index.html and randomizedresults.html
+
+---
 
 ### script.js and randomizedresults.js
 
