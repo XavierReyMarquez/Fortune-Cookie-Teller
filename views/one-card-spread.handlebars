@@ -1,35 +1,41 @@
 <section class="overflow-hidden text-gray-700 w-auto">
-    <div class="container px-6 py-3 mx-auto mt-5 lg:pt-12 lg:px-32">
-        <div class="flex flex-wrap -m-1 md:-m-2">
-            <div class="flex flex-wrap mx-auto w-1/2">
-                <div class="w-30 h-80 p-1 md:p-2">
-                    <img alt="tarot card" class="block object-cover object-center w-full h-full rounded-lg shadow-md animate__flipOutY"
-                        src="https://cdna.artstation.com/p/assets/images/images/019/375/364/large/clarissa-choi-back.jpg?1563213352">
+    <div class="container">
+
+        <div class="p-6 flex-row justify-center">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                    <img 
+                            style="width:200px;height:300px;"
+                            alt="tarot card"
+                            src="https://cdna.artstation.com/p/assets/images/images/019/375/364/large/clarissa-choi-back.jpg?1563213352"
+                        />
                     </div>
-                </div>
-                
-                <div id="card-1" style="display: none"> {{card.meanings}} </div>
-                <div class="w-1/3 md:w-1/2 sm:w-auto h-70 m-2 p-1 md:p-2 p-5 bg-gray-300 rounded">
-                    <h2>{{card.name}}</h2>
-                    {{card.questiontoask}}
-                    <div 
-                        class="inline-block py-2.5 my-2 text-black font-medium text-xs leading-tight uppercase rounded"
-                    >
-                        Light:
-                    </div> 
-                    <div class="px-2" id="light1-notes"></div>
-                    <div 
-                        id="light-title"
-                        class="inline-block py-2.5 my-2 text-black font-medium text-xs leading-tight uppercase rounded"
-                    >
-                        Shadow:
-                    </div> 
-                    <div class="px-2" id="shadow1-notes"></div>
-                </div>
 
+                    <div class="flip-card-back p-3">
+                        <h4>{{card.name}}</h4>
+                        {{card.questiontoask}}
+                        <div 
+                            class="inline-block p-1 text-black font-medium text-xs leading-tight uppercase rounded"
+                        >
+                            Light:
+                        </div> 
+                        <div class="px-3" id="light1-notes"></div>
+                        <div 
+                            id="light-title"
+                            class="inline-block p-1 text-black font-medium text-xs leading-tight uppercase rounded"
+                        >
+                            Shadow:
+                        </div> 
+                        <div class="px-3" id="shadow1-notes"></div>
+                    </div>
+                    <div id="card-1" style="display: none"> {{card.meanings}} </div>
 
+                </div>
             </div>
         </div>
+
+
     </div>
     <div class="container flex">
         <div class="container w-auto mb-3 p-3 bg-purple-100 xl:w-96 rounded shadow-lg">
