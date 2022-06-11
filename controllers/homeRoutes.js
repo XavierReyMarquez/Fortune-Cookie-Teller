@@ -38,7 +38,7 @@ router.get('/one-card-spread', async (req, res) => {
   try {
     const cards = await Card.findAll({});
     // get random card
-    const indexOfCard = Math.floor(Math.random() * 78);
+    const indexOfCard = Math.floor(Math.random() * 77) + 1;
 
     const cardData = await Card.findByPk(indexOfCard, { plain: true});
     const card = cardData.get({ plain: true });
@@ -64,9 +64,9 @@ router.get('/three-spread', async (req, res) => {
   try {
     const cards = await Card.findAll({});
     // get random card
-    const index1 = Math.floor(Math.random() * 78);
-    const index2 = Math.floor(Math.random() * 78);
-    const index3 = Math.floor(Math.random() * 78);
+    const index1 = Math.floor(Math.random() * 77) + 1;
+    const index2 = Math.floor(Math.random() * 77) + 1;
+    const index3 = Math.floor(Math.random() * 77) + 1;
 
     const cardData1 = await Card.findByPk(index1, { plain: true});
     const cardData2 = await Card.findByPk(index2, { plain: true});
