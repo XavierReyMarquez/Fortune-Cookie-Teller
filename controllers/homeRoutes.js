@@ -28,11 +28,37 @@ router.get('/', async (req, res) => {
   }
 });
 
+// router.get('/one-card-spread', async (req, res) => {
+//   res.render('one-card-spread', {
+//     logged_in: req.session.logged_in,
+//   });
+// });
+
 router.get('/one-card-spread', async (req, res) => {
-  res.render('one-card-spread', {
-    logged_in: req.session.logged_in,
-  });
+  try {
+    const cards = await Card.findAll({});
+    console.log(cards.length, "is card data length")
+
+    // get random card
+    const indexOfCard = Math.floor(Math.random() * 78);
+    const foundCard = cards[indexOfCard]
+    console.log("Found card is", foundCard)
+    // const cards = carddata.map((card) => card.get({ plain: true }));
+
+    
+
+    // Pass serialized data and session flag into template
+    res.render('one-card-spread', {
+      foundCard,
+    });
+    
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
+
+
 
 router.get('/three-spread', async (req, res) => {
   res.render('three-spread', {

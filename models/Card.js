@@ -57,9 +57,14 @@ Card.init(
       //   newCard.fortune_telling = JSON.stringify(newCard.fortune_telling);
       //   return newCard;
       // },
-      afterFind: async (foundCard) => {
-        foundCard.fortune_telling = JSON.parse(foundCard.fortune_telling);
-        return foundCard;
+      afterFind: async (foundCards) => {
+
+        // get random card
+       /*  const indexOfCard = Math.floor(Math.random() * 78);
+        const foundCard = foundCards[indexOfCard]
+
+        return foundCard.dataValues; */
+        return foundCards;
       },
     },
     sequelize,

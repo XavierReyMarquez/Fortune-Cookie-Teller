@@ -1,5 +1,5 @@
-DROP DATABASE IF EXISTS fortune_db;
-CREATE DATABASE fortune_db;
+DROP DATABASE IF EXISTS crowdfund_db;
+CREATE DATABASE crowdfund_db;
 
-USE fortune_db;
+USE crowdfund_db;
 
