@@ -40,19 +40,23 @@ document
 
 
 // update the card(s) with the meaning 
-const card1Meaning = JSON.parse(document.querySelector('#card-1').innerHTML)
-const card2Meaning = JSON.parse(document.querySelector('#card-2').innerHTML)
-const card3Meaning = JSON.parse(document.querySelector('#card-3').innerHTML)
-console.log(card1Meaning.shadow)
-console.log((card1Meaning))
+const card1 = document.querySelector('#card-1')
+const card2 = document.querySelector('#card-2')
+const card3 = document.querySelector('#card-3')
 
-document.querySelector("#shadow1-notes").innerHTML = card1Meaning.shadow[0]
-document.querySelector("#light1-notes").innerHTML = card1Meaning.light[0]
 
-if (card2Meaning && card3Meaning) { 
+if (card1) {
+    const card1Meaning = JSON.parse(document.querySelector('#card-1').innerHTML)
+    document.querySelector("#shadow1-notes").innerHTML = card1Meaning.shadow[0]
+    document.querySelector("#light1-notes").innerHTML = card1Meaning.light[0]    
+}
+if (card2) { 
+    const card2Meaning = JSON.parse(document.querySelector('#card-2').innerHTML)
     document.querySelector("#shadow2-notes").innerHTML = card2Meaning.shadow[0]
     document.querySelector("#light2-notes").innerHTML = card2Meaning.light[0]
-
+ } 
+if (card3) {
+    const card3Meaning = JSON.parse(document.querySelector('#card-3').innerHTML)
     document.querySelector("#shadow3-notes").innerHTML = card3Meaning.shadow[0]
     document.querySelector("#light3-notes").innerHTML = card3Meaning.light[0]
 }
