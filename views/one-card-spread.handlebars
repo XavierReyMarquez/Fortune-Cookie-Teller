@@ -8,9 +8,14 @@
                     {{name}}
                 </div>
                 <div class="w-1/3 md:w-1/2 sm:w-auto h-70 m-2 p-1 md:p-2 bg-gray-300 rounded">
-                    <h5>{{name}}</h5>
-                    <p>{{meanings}}<br>
-                    {{questiontoask}}<br>
+                    <h5>{{card.name}}</h5>
+                    <p>
+                        {{#with meanings}}
+                        {{light}}
+                        {{shadow}}
+                        {{/with}}
+                        
+                        <br>{{questiontoask}}<br>
                 </div>
             </div>
         </div>

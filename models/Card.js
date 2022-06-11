@@ -58,7 +58,8 @@ Card.init(
       //   return newCard;
       // },
       afterFind: async (foundCard) => {
-        foundCard.fortune_telling = JSON.parse(foundCard.fortune_telling);
+        foundCard = JSON.parse(foundCard.dataValues);
+        console.log(foundCard.dataValues);
         return foundCard;
       },
     },

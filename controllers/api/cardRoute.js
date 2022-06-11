@@ -1,38 +1,32 @@
 const router = require('express').Router();
-const { Card } = require('../../models');
+const { Card, User } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.post('/', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
   try {
-    const newCard = await Card.create({
-      ...req.body,
-      user_id: req.session.user_id,
+    const carddata = await Card.findAll({
+      include: [{ model: User }],
     });
-
-    res.status(200).json(newCard);
+    // convert to plain javascript
+    const cards = carddata.map((card) => card.get({ plain: true }));
+    // console.log(cards);
+    // Pass serialized data and session flag into template
+    res.render('card', {
+      cards,
+    });
   } catch (err) {
-    res.status(400).json(err);
+    console.log(err);
+    res.status(500).json(err);
   }
 });
 
-router.delete('/:id', withAuth, async (req, res) => {
-  try {
-    const cardData = await Card.destroy({
-      where: {
-        id: req.params.id,
-        user_id: req.session.user_id,
-      },
-    });
+router.put('/card'),
+  (req, res) => {
+    res.send('card');
+  };
 
-    if (!cardData) {
-      res.status(404).json({ message: 'No Card found with this id!' });
-      return;
-    }
-
-    res.status(200).json(cardData);
-  } catch (err) {
-    res.status(500).json(err);
-  }
+router.delete('/card', (req, res) => {
+  res.send('card');
 });
 
 module.exports = router;
