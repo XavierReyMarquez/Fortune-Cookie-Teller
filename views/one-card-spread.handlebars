@@ -1,5 +1,6 @@
 <section class="overflow-hidden text-gray-700 w-auto">
     <div class="container px-6 py-3 mx-auto mt-5 lg:pt-12 lg:px-32">
+        {{each Card as |Card|}}
         <div class="flex flex-wrap -m-1 md:-m-2">
             <div class="flex flex-wrap mx-auto w-1/2">
                 <div class="w-30 h-80 p-1 md:p-2">
@@ -8,11 +9,14 @@
                 </div>
                 <div class="w-1/3 md:w-1/2 sm:w-auto h-70 m-2 p-1 md:p-2 bg-gray-300 rounded">
                     <h5>{{name}}</h5>
-                    <p>{{meanings}}<br>
-                    {{questiontoask}}<br>
+                    <p class="text-sm">{{meanings}}<br>
+                    {{meanings}}<br>
+                    {{questionstoask}}<br>
+                    </p>
                 </div>
             </div>
         </div>
+        {{/each}}
     </div>
     <div class="container flex">
         <div class="container w-auto mb-3 p-3 bg-purple-100 xl:w-96 rounded shadow-lg">
