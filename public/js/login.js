@@ -49,12 +49,24 @@ const signupFormHandler = async (event) => {
 
 
 
-// document
-//   .querySelector('.login-form')
-//   .addEventListener('submit', loginFormHandler);
+document
+  .querySelector('.login-form')
+  .addEventListener('submit', loginFormHandler);
 
-  document
+document
   .querySelector('.signup-form')
   .addEventListener('submit', signupFormHandler);
 
 
+
+// Get the query parameters from the URL
+let params = (new URL(document.location)).searchParams;
+let signup = params.get("signup");
+
+if (signup) {
+  document.getElementById("login-section").style.display = "none";
+  document.getElementById("signup-section").style.display = "";
+} else {
+  document.getElementById("signup-section").style.display = "none";
+  document.getElementById("login-section").style.display = "";
+}
