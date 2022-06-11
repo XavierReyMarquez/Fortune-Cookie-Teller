@@ -45,6 +45,7 @@ router.get('/one-card-spread', async (req, res) => {
 
     res.render('one-card-spread', {
       card,
+      logged_in: req.session.logged_in,
     });
     
   } catch (err) {
@@ -56,9 +57,37 @@ router.get('/one-card-spread', async (req, res) => {
 
 
 router.get('/three-spread', async (req, res) => {
-  res.render('three-spread', {
-    logged_in: req.session.logged_in,
-  });
+  // res.render('three-spread', {
+  //   logged_in: req.session.logged_in,
+  // });
+
+  try {
+    const cards = await Card.findAll({});
+    // get random card
+    const index1 = Math.floor(Math.random() * 78);
+    const index2 = Math.floor(Math.random() * 78);
+    const index3 = Math.floor(Math.random() * 78);
+
+    const cardData1 = await Card.findByPk(index1, { plain: true});
+    const cardData2 = await Card.findByPk(index2, { plain: true});
+    const cardData3 = await Card.findByPk(index3, { plain: true});
+
+    const card1 = cardData1.get({ plain: true });
+    const card2 = cardData2.get({ plain: true });
+    const card3 = cardData3.get({ plain: true });
+
+    res.render('three-spread', {
+      card1,
+      card2,
+      card3,
+      logged_in: req.session.logged_in,
+    });
+    
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+
 });
 
 router.get('/card/:id', async (req, res) => {
