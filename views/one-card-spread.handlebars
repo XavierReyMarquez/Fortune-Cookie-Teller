@@ -5,11 +5,11 @@
             <div class="flex flex-wrap mx-auto w-1/2">
                 <div class="w-30 h-80 p-1 md:p-2">
                     <img alt="tarot card" class="block object-cover object-center w-full h-full rounded-lg shadow-md animate__flipOutY"
-                    src="https://cdna.artstation.com/p/assets/images/images/019/375/364/large/clarissa-choi-back.jpg?1563213352">
+                    src={{img}}>
                 </div>
-                <div class="w-1/3 md:w-1/2 sm:w-auto h-70 m-2 p-1 md:p-2 bg-gray-300 rounded">
+                <div class="w-1/3 md:w-1/2 sm:w-auto h-70 m-2 p-1 md:p-2 bg-gray-300 text-gray-600 rounded">
                     <h5>{{name}}</h5>
-                    <p class="text-sm">{{meanings}}<br>
+                    <p class="text-xs">{{meanings}}<br>
                     {{meanings}}<br>
                     {{questionstoask}}<br>
                     </p>
@@ -20,7 +20,7 @@
     </div>
     <div class="container flex">
         <div class="container w-auto mb-3 p-3 bg-purple-100 xl:w-96 rounded shadow-lg">
-            <label for="journalInput" class="form-label inline-block mb-2 text-gray-700">What are your thoughts?</label>
+            <label for="journalInput" class="form-label inline-block mb-2 text-gray-600">What are your thoughts?</label>
                 <textarea
                     type="text"
                     class="form-control block w-full px-3 py-1.5 mx-1 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
@@ -31,4 +31,5 @@
             data-mdb-ripple="true" data-mdb-ripple-color="light">Save</button>
         </div>
     </div>
+<script src="models/Card.js"></script>
 </section>

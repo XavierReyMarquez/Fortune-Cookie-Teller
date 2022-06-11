@@ -26,9 +26,9 @@
         {{!-- Issue with spacing on logged in links --}}
         <div class="container-fluid flex flex-wrap items-center justify-between px-6 py-2 bg-gray-200 rounded">
          {{#if logged_in}} 
-          <a href="/profile">Tarot Journal</a> | <a href="/logout" id="logout">logout</a>
+          <a class="px-1" href="/profile">Tarot Journal</a> | <a class="px-1" href="/logout" id="logout">Logout</a>
          {{else}} 
-          <a href="/login">Login</a>
+          <a class="px-1"href="/login">Login</a>
          {{/if}} 
         </div>
       </nav>
