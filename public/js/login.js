@@ -25,7 +25,6 @@ const loginFormHandler = async (event) => {
 
 const signupFormHandler = async (event) => {
   event.preventDefault();
-  console.log("sign up button clicked.")
 
   const name = document.querySelector('#name-signup').value.trim();
   const email = document.querySelector('#email-signup').value.trim();
@@ -50,12 +49,24 @@ const signupFormHandler = async (event) => {
 
 
 
-// document
-//   .querySelector('.login-form')
-//   .addEventListener('submit', loginFormHandler);
+document
+  .querySelector('.login-form')
+  .addEventListener('submit', loginFormHandler);
 
-  document
+document
   .querySelector('.signup-form')
   .addEventListener('submit', signupFormHandler);
 
 
+
+// Get the query parameters from the URL
+let params = (new URL(document.location)).searchParams;
+let signup = params.get("signup");
+
+if (signup) {
+  document.getElementById("login-section").style.display = "none";
+  document.getElementById("signup-section").style.display = "";
+} else {
+  document.getElementById("signup-section").style.display = "none";
+  document.getElementById("login-section").style.display = "";
+}
