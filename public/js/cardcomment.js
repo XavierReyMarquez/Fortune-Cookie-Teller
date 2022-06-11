@@ -39,4 +39,15 @@ document
   .addEventListener('click', commentHandler);
 
 
+// update the card with the meaning 
+const card1Meaning = JSON.parse(document.querySelector('#card-1').innerHTML)
+console.log(card1Meaning.shadow)
+console.log((card1Meaning))
+
+document.querySelector("#shadow-notes").innerHTML = card1Meaning.shadow[0]
+document.querySelector("#light-notes").innerHTML = card1Meaning.light[0]
+
+
+
+
 // CRUD routes : update, Delete, Get route
