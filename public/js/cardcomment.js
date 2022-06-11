@@ -52,13 +52,13 @@ if (card1) {
 }
 if (card2) { 
     const card2Meaning = JSON.parse(document.querySelector('#card-2').innerHTML)
-    document.querySelector("#shadow2-notes").innerHTML = card2Meaning.shadow[0]
-    document.querySelector("#light2-notes").innerHTML = card2Meaning.light[0]
+    document.querySelector("#shadow2-notes").innerHTML = card2Meaning.shadow[1]
+    document.querySelector("#light2-notes").innerHTML = card2Meaning.light[1]
  } 
 if (card3) {
     const card3Meaning = JSON.parse(document.querySelector('#card-3').innerHTML)
-    document.querySelector("#shadow3-notes").innerHTML = card3Meaning.shadow[0]
-    document.querySelector("#light3-notes").innerHTML = card3Meaning.light[0]
+    document.querySelector("#shadow3-notes").innerHTML = card3Meaning.shadow[2]
+    document.querySelector("#light3-notes").innerHTML = card3Meaning.light[2]
 }
 
 // CRUD routes : update, Delete, Get route
