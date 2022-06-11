@@ -1,52 +1,82 @@
 <section class="overflow-hidden text-gray-700 w-auto">
-    <div class="container px-6 py-3 mx-auto mt-5 lg:pt-12 lg:px-32">
-        <div class="flex flex-wrap -m-1 md:-m-2">
-            <div class="flex flex-wrap mx-auto w-1/2">
-                <div class="w-30 h-80 p-1 md:p-2">
-                    <img alt="tarot card" class="block object-cover object-center w-full h-full rounded-lg shadow-md animate__flipOutY"
-                        src="https://cdna.artstation.com/p/assets/images/images/019/375/364/large/clarissa-choi-back.jpg?1563213352">
+    <div class="container">
+
+        <div class="p-6 flex-row justify-center">
+            <div class="flip-card">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                    <img 
+                            style="width:200px;height:300px;"
+                            alt="tarot card"
+                            src="https://cdna.artstation.com/p/assets/images/images/019/375/364/large/clarissa-choi-back.jpg?1563213352"
+                        />
                     </div>
-                </div>
-                
-                <div id="card-1" style="display: none"> {{card.meanings}} </div>
-                <div class="w-1/3 md:w-1/2 sm:w-auto h-70 m-2 p-1 md:p-2 p-5 bg-gray-300 rounded">
-                    <h2>{{card.name}}</h2>
-                    {{card.questiontoask}}
-                    <div 
-                        class="inline-block py-2.5 my-2 text-black font-medium text-xs leading-tight uppercase rounded"
-                    >
-                        Light:
-                    </div> 
-                    <div class="px-2" id="light1-notes"></div>
-                    <div 
-                        id="light-title"
-                        class="inline-block py-2.5 my-2 text-black font-medium text-xs leading-tight uppercase rounded"
-                    >
-                        Shadow:
-                    </div> 
-                    <div class="px-2" id="shadow1-notes"></div>
-                </div>
 
+                    <div class="flip-card-back p-3">
+                        <h4>{{card.name}}</h4>
+                        {{card.questiontoask}}
+                        <div 
+                            class="inline-block p-1 text-black font-medium text-xs leading-tight uppercase rounded"
+                        >
+                            Light:
+                        </div> 
+                        <div class="px-3" id="light1-notes"></div>
+                        <div 
+                            id="light-title"
+                            class="inline-block p-1 text-black font-medium text-xs leading-tight uppercase rounded"
+                        >
+                            Shadow:
+                        </div> 
+                        <div class="px-3" id="shadow1-notes"></div>
+                    </div>
+                    <div id="card-1" style="display: none"> {{card.meanings}} </div>
 
+                </div>
             </div>
         </div>
+
+
     </div>
     <div class="container flex">
         <div class="container w-auto mb-3 p-3 bg-purple-100 xl:w-96 rounded shadow-lg">
-            <label for="journalInput" class="form-label inline-block mb-2 text-gray-600">What are your thoughts?</label>
-                <textarea
-                    type="text"
-                    class="form-control block w-full px-3 py-1.5 mx-1 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                    id="journalInput"
-                    placeholder="This spread is trying to tell me..."/></textarea>
-        <button 
-            type="button"
-            id="save-btn"
-            class="inline-block px-6 py-2.5 my-2 border-2 border-white text-white font-medium text-xs leading-tight uppercase rounded bg-gray-600 hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
-            data-mdb-ripple="true"
-             data-mdb-ripple-color="light">
-             Save
-        </button>
+            {{#if logged_in}} 
+                <label for="journalInput" class="form-label inline-block mb-2 text-gray-600">What are your thoughts?</label>
+                    <textarea
+                        type="text"
+                        class="form-control block w-full px-3 py-1.5 mx-1 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                        id="journalInput"
+                        placeholder="This spread is trying to tell me..."
+                    /> </textarea>
+
+                <button 
+                    type="button"
+                    id="save-btn"
+                    class="inline-block px-6 py-2.5 my-2 border-2 border-white text-white font-medium text-xs leading-tight uppercase rounded bg-gray-600 hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+                    data-mdb-ripple="true"
+                    data-mdb-ripple-color="light">
+                    Save
+                </button>
+            {{else}} 
+                <div class="flex-column p-5">
+                   <Div class <h3>Want to save your thoughts?</h2> 
+                    <label for="journalInput" class="form-label inline-block mb-2 text-gray-600">Create an account or log in now!</label>
+
+
+                    
+
+
+                   <div class="container-fluid flex flex-wrap items-center justify-between px-6 py-2 rounded">
+                        <a href="/login?signup=true" id="signup-btn" class="inline-block px-6 py-2.5 border-2 border-black text-black font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out">
+                            Sign up
+                        </a>
+                        
+                        <a href="/login" id="signup-btn" class="inline-block px-6 py-2.5 border-2 border-black text-black font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out">
+                            Login
+                        </a>                    
+                    </div>
+                </div>
+            {{/if}} 
+           
         </div>
     </div>
 </section>

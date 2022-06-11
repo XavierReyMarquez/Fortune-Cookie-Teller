@@ -32,12 +32,11 @@ const commentHandler = async () => {
         document.querySelector('#journalinput').value = '';
     }
 }
-
-
-document
-  .querySelector('#save-btn')
-  .addEventListener('click', commentHandler);
-
+    
+// Add save button handler if it exists (which happens when the user is logged in)
+if (document.querySelector("#save-btn")) {
+    document.querySelector('#save-btn').addEventListener('click', commentHandler);
+}
 
 // update the card(s) with the meaning 
 const card1 = document.querySelector('#card-1')
