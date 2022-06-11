@@ -58,12 +58,6 @@ Card.init(
       //   return newCard;
       // },
       afterFind: async (foundCards) => {
-
-        // get random card
-       /*  const indexOfCard = Math.floor(Math.random() * 78);
-        const foundCard = foundCards[indexOfCard]
-
-        return foundCard.dataValues; */
         return foundCards;
       },
     },
