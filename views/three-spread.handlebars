@@ -8,11 +8,10 @@
             src="https://cdna.artstation.com/p/assets/images/images/019/375/364/large/clarissa-choi-back.jpg?1563213352">
         </div>
         {{!-- This div will be the "overlay" when hovering for meaning, could make this a handlebar? --}}
-        <div class="w-1/2 h-80 m-2 p-1 md:p-2 bg-gray-300 rounded">
+        <div class="w-3/5 h-80 m-2 p-1 md:p-2 bg-gray-300 rounded">
           <h5>{{name}}</h5>
           <p>{{meanings}}<br>
-          {{fortune_telling}}<br>
-          {{'Questions to Ask'}}</p>
+          {{questiontoask}}<br>
         </div>
       </div>
       <div class="flex flex-wrap w-1/3">
@@ -21,11 +20,10 @@
             src="https://cdna.artstation.com/p/assets/images/images/019/375/364/large/clarissa-choi-back.jpg?1563213352">
         </div>
         {{!-- Card meaning --}}
-        <div class="w-1/2 h-80 m-2 p-1 md:p-2 bg-gray-300 rounded">
+        <div class="w-3/5 h-80 m-2 p-1 md:p-2 bg-gray-300 rounded">
           <h5>{{name}}</h5>
           <p>{{meanings}}<br>
-          {{fortune_telling}}<br>
-          {{'Questions to Ask'}}</p>
+          {{questiontoask}}<br>
         </div>
       </div>
       <div class="flex flex-wrap w-1/3">
@@ -34,19 +32,29 @@
             src="https://cdna.artstation.com/p/assets/images/images/019/375/364/large/clarissa-choi-back.jpg?1563213352">
         </div>
         {{!-- Card meaning + test the handlebars html--}}
-        {{{Card}}}
+        <div class="w-3/5 h-80 m-2 p-1 md:p-2 bg-gray-300 rounded">
+          <h5>{{name}}</h5>
+          <p>{{meanings}}<br>
+          {{questiontoask}}<br>
+        </div>
       </div>
     </div>
   </div>
-  <div class="container flex bg-gray-200">
-  <div class="container w-auto mb-3 p-3 xl:w-96 bg-yellow-200">
-    <label for="journalInput" class="form-label inline-block mb-2 text-gray-700">What are your thoughts?</label>
-    <input
-      type="text"
-      class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-      id="journalInput"
-      placeholder="This spread is trying to tell me..."
-    />
+    <div class="container flex">
+      <div class="container w-auto mb-3 p-3 bg-purple-100 xl:w-96 rounded shadow-lg">
+          <label for="journalInput" class="form-label inline-block mb-2 text-gray-700">What are your thoughts?</label>
+              <textarea
+                  type="text"
+                  class="form-control block w-full px-3 py-1.5 mx-1 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                  id="journalInput"
+                  placeholder="This spread is trying to tell me..."/></textarea>
+      <button type="button"
+            id="save-btn"
+          class="inline-block px-6 py-2.5 my-2 border-2 border-white text-white font-medium text-xs leading-tight uppercase rounded bg-gray-600 hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+          data-mdb-ripple="true" data-mdb-ripple-color="light">Save</button>
+      </div>
   </div>
 </div>
 </section>
+
+<script src='./js/cardcomment.js'></script>

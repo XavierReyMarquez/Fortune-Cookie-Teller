@@ -1,19 +1,22 @@
 <section class="h-full w-full relative">
-  <div class="container px-6 py-12 h-full w-1/2 bg-indigo-300">
+  <div class="container px-6 py-12 h-full w-1/2 rounded shadow-xl">
     <div class="flex justify-center items-center flex-wrap h-full g-6 text-gray-800">
       <div class="md:w-8/12 lg:w-6/12 mb-12 md:mb-0">
-        {{!-- <img
-          src="[image]"
-          class="w-full"
-          alt="Tarot icon"
-        /> --}}
+        <img
+          src="https://i.pinimg.com/236x/26/84/57/268457d0fa12051017ec5c1cc00dfb16.jpg"
+          class="w-auto rounded mx-24 shadow-md"
+          alt="The Fool - Start a new journey"
+        />
       </div>
 
-{{#if isLoggedOut}}
   <div class="grid-rows-1">
-    <div class="auto-cols-auto">
-      <h2>Login</h2>
 
+    <div class="auto-cols-auto p-5 bg-gray-200 rounded shadow-xl" id="login-section">
+      <div class="m-5">
+        <a href="/login?signup=true" class="inline-block px-6 py-2.5 border-2 border-gray-400 text-gray-600 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out" type="submit">create new account</a>
+      </div>
+
+      <h2>Login</h2>
       <form class="form login-form">
         <div class="form-group">
           <label for="email-login">email:</label>
@@ -24,13 +27,12 @@
           <input class="form-input" type="password" id="password-login" />
         </div>
         <div class="form-group">
-          <button class="btn btn-primary" type="submit">login</button>
+          <button class="inline-block px-6 py-2.5 border-2 border-gray-400 text-gray-600 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out" type="submit">login</button>
         </div>
       </form>
     </div>
 
-{{else}}
-    <div class="auto-cols-auto">
+    <div class="auto-cols-auto p-5 bg-gray-200 rounded shadow-xl" id="signup-section">
       <h2>Signup</h2>
 
       <form class="form signup-form">
@@ -47,11 +49,10 @@
           <input class="form-input" type="password" id="password-signup" />
         </div>
         <div class="form-group">
-          <button id="signup-btn" class="btn btn-primary" type="submit">signup</button>
+          <button class="inline-block px-6 py-2.5 border-2 border-gray-400 text-gray-600 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out" type="submit">signup</button>
         </div>
       </form>
     </div>
-{{/if}}
   </div>
 </section>
 
