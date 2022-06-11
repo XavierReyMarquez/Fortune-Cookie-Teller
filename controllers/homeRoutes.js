@@ -37,19 +37,14 @@ router.get('/', async (req, res) => {
 router.get('/one-card-spread', async (req, res) => {
   try {
     const cards = await Card.findAll({});
-    console.log(cards.length, "is card data length")
-
     // get random card
     const indexOfCard = Math.floor(Math.random() * 78);
-    const foundCard = cards[indexOfCard]
-    console.log("Found card is", foundCard)
-    // const cards = carddata.map((card) => card.get({ plain: true }));
 
-    
+    const cardData = await Card.findByPk(indexOfCard, { plain: true});
+    const card = cardData.get({ plain: true });
 
-    // Pass serialized data and session flag into template
     res.render('one-card-spread', {
-      foundCard,
+      card,
     });
     
   } catch (err) {
