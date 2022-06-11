@@ -19,7 +19,21 @@ router.get('/', async (req, res) => {
 });
 
 router.get('/one-card-spread', async (req, res) => {
-  res.render('one-card-spread');
+  try {
+    const carddata = await Card.findAll({
+      include: [{ model: User }],
+    });
+    // convert to plain javascript
+    const cards = carddata.map((card) => card.get({ plain: true }));
+    console.log(cards);
+    // Pass serialized data and session flag into template
+    res.render('one-card-spread', {
+      cards,
+    });
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 router.get('/three-spread', async (req, res) => {
@@ -50,34 +64,33 @@ router.get('/three-spread', async (req, res) => {
 
 // Use withAuth middleware to prevent access to route
 router.get('/profile', withAuth, async (req, res) => {
-    try {
+  try {
     // Find the logged in user based on the session ID
     const userData = await User.findByPk(req.session.user_id, {
-        attributes: { exclude: ['password'] },
-      });
+      attributes: { exclude: ['password'] },
+    });
 
-      const user = userData.get({ plain: true });
+    const user = userData.get({ plain: true });
 
-      res.render('profile', {
-        ...user,
-        logged_in: true,
-      });
-    } catch (err) {
-      res.status(500).json(err);
-    }
-  });
+    res.render('profile', {
+      ...user,
+      logged_in: true,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
-  router.get('/login', (req, res) => {
-    // If the user is already logged in, redirect the request to another route
-    if (req.session.logged_in) {
-      res.redirect('/profile');
-      return;
-    }
-  
-    res.render('login');
-  });
+router.get('/login', (req, res) => {
+  // If the user is already logged in, redirect the request to another route
+  if (req.session.logged_in) {
+    res.redirect('/profile');
+    return;
+  }
 
-  
+  res.render('login');
+});
+
 router.get('/logout', (_req, res) => {
   res.render('logout');
 });

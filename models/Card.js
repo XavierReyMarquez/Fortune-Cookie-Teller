@@ -43,31 +43,32 @@ Card.init(
   },
 
   {
-    // hooks: {
-    //   beforeValidate: async (newCard) => {
-    //     newCard.fortune_telling = JSON.stringify(newCard.fortune_telling);
+    hooks: {
+      beforeValidate: async (newCard) => {
+        newCard.fortune_telling = JSON.stringify(newCard.fortune_telling);
 
-    //     newCard.meanings = JSON.stringify(newCard.meanings);
+        newCard.meanings = JSON.stringify(newCard.meanings);
 
-    //     newCard.questionstoask = JSON.stringify(newCard.questionstoask);
-    //     console.log(newCard);
-    //     return newCard;
-    //   },
-    //   // beforeUpdate: async (newCard) => {
-    //   //   newCard.fortune_telling = JSON.stringify(newCard.fortune_telling);
-    //   //   return newCard;
-    //   // },
-    //   afterFind: async (foundCard) => {
-    //     foundCard = JSON.parse(foundCard);
+        newCard.questionstoask = JSON.stringify(newCard.questionstoask);
+        // console.log(newCard);
+        return newCard;
+      },
+      // beforeUpdate: async (newCard) => {
+      //   newCard.fortune_telling = JSON.stringify(newCard.fortune_telling);
+      //   return newCard;
+      // },
+      afterFind: async (foundCard) => {
+        // foundCard = JSON.parse(foundCard);
 
-    //     meanings = JSON.parse(foundCard.meanings);
+        // meanings = JSON.parse(foundCard.meanings);
 
-    //     questionstoask = JSON.parse(foundCard.questionstoask);
+        // questionstoask = JSON.parse(foundCard.questionstoask);
 
-    //     console.log(newFoundCard);
-    //     return foundCard;
-    //   },
-    // },
+        // console.log(foundCard);
+
+        return foundCard;
+      },
+    },
     sequelize,
     timestamps: false,
     freezeTableName: true,
