@@ -4,26 +4,66 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   try {
-    const userData = await User.findAll({});
+    const users = await User.findAll({});
     // Serialize data so the template can read it
-    const newuser = userData.map((user) => user.get({ plain: true }));
+    const newuser = users.map((user) => user.get({ plain: true }));
+
+    let user = {}
+    if ( req.session.logged_in) {
+      // Find the logged in user based on the session ID
+      const userData = await User.findByPk(req.session.user_id, {
+        attributes: { exclude: ['password'] },
+      });
+  
+      user = userData.get({ plain: true });
+    }
     // Pass serialized data and session flag into template
     res.render('homepage', {
-      newuser,
+      newuser,        
+      user: user,
       logged_in: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
-    console.log(cardData);
   }
 });
 
+// router.get('/one-card-spread', async (req, res) => {
+//   res.render('one-card-spread', {
+//     logged_in: req.session.logged_in,
+//   });
+// });
+
 router.get('/one-card-spread', async (req, res) => {
-  res.render('one-card-spread');
+  try {
+    const cards = await Card.findAll({});
+    console.log(cards.length, "is card data length")
+
+    // get random card
+    const indexOfCard = Math.floor(Math.random() * 78);
+    const foundCard = cards[indexOfCard]
+    console.log("Found card is", foundCard)
+    // const cards = carddata.map((card) => card.get({ plain: true }));
+
+    
+
+    // Pass serialized data and session flag into template
+    res.render('one-card-spread', {
+      foundCard,
+    });
+    
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
+
+
 router.get('/three-spread', async (req, res) => {
-  res.render('three-spread');
+  res.render('three-spread', {
+    logged_in: req.session.logged_in,
+  });
 });
 
 router.get('/card/:id', async (req, res) => {
@@ -61,6 +101,7 @@ router.get('/profile', withAuth, async (req, res) => {
       res.render('profile', {
         ...user,
         logged_in: true,
+        user: user,
       });
     } catch (err) {
       res.status(500).json(err);
