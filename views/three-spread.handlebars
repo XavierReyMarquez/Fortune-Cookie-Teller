@@ -1,4 +1,5 @@
 <section class="overflow-hidden text-gray-700">
+  {{#each Card as |Card|}}
   <div class="container px-6 py-3 mx-auto mt-5 lg:pt-12 lg:px-32">
     <div class="flex flex-wrap -m-1 md:-m-2">
       <div class="flex flex-wrap w-1/3">
@@ -63,5 +64,6 @@
       </div>
   </div>
 </div>
+{{/each}}
 <script src="../models/Card.js"></script>
 </section>
